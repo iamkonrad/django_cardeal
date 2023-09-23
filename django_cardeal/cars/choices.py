@@ -1,6 +1,14 @@
 from datetime import datetime
 
 
+Condition_Choices = (
+    ('USED', 'USED'),
+    ('NEW', 'NEW'),
+    ('COLLISION','COLLISION'),
+    ('PARTS', 'PARTS'),
+
+    )
+
 Doors_Choices = (
     ('2', '2'),
     ('3', '3'),
@@ -25,6 +33,13 @@ Features_Choices = (
     ('Wind Deflector', 'Wind Deflector'),
     ('Bluetooth Handset', 'Bluetooth Handset'),
     )
+
+Transmission_Choices = (
+    ('AUTOMATIC', 'AUTOMATIC'),
+    ('MANUAL', 'MANUAL'),
+    ('OTHER', 'OTHER'),
+
+)
 
 
 Year_Choices =[]

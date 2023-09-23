@@ -2,7 +2,7 @@ from django.db import models
 from datetime import datetime
 from django_countries.fields import CountryField
 from ckeditor.fields import RichTextField
-from .choices import Year_Choices, Features_Choices, Doors_Choices
+from .choices import Year_Choices, Features_Choices, Doors_Choices,Condition_Choices,Transmission_Choices
 
 
 
@@ -14,7 +14,7 @@ class Car(models.Model):
     color = models.CharField(max_length=200)
     model = models.CharField(max_length=200)
     production_year = models.IntegerField(('year'),choices=Year_Choices)
-    condition = models.CharField(max_length=200)
+    condition = models.CharField(choices=Condition_Choices,max_length=200)
     price = models.IntegerField()
     description = RichTextField()
     car_photo= models.ImageField(upload_to='photos/%Y/%m/%d/')
@@ -25,7 +25,7 @@ class Car(models.Model):
     features = models.CharField(choices=Features_Choices, max_length=200)
     body_style = models.CharField(max_length=200)
     engine = models.CharField(max_length=200)
-    transmission = models.CharField(max_length=200)
+    transmission = models.CharField(choices=Transmission_Choices, max_length=200)
     interior = models.CharField(max_length=200)
     mileage = models.IntegerField()
     doors = models.CharField(choices=Doors_Choices,max_length=20)
@@ -35,3 +35,6 @@ class Car(models.Model):
     number_of_owners = models.CharField(max_length=200)
     is_featured = models.BooleanField(default=False)
     created_date = models.DateTimeField(default=datetime.now,blank=True)
+
+    def __str__(self):
+        return self.car_name
