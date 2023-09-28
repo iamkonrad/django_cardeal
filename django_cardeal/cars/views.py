@@ -29,6 +29,34 @@ def search (request):
         if keyword:
             cars = cars.filter(description__icontains=keyword)
 
+    if 'model' in request.GET:
+        model = request.GET['model']
+        if model:
+            cars = cars.filter(model__iexact=model)
+
+    if 'city' in request.GET:
+        city = request.GET['city']
+        if city:
+            cars = cars.filter(model__iexact=city)
+
+    if 'production_year' in request.GET:
+        production_year = request.GET['production_year']
+        if production_year:
+            cars = cars.filter(model__iexact=production_year)
+
+    if 'body_style' in request.GET:
+        body_style = request.GET['body_style']
+        if body_style:
+            cars = cars.filter(model__iexact=body_style)
+
+    if 'min_price' in request.GET:
+        min_price=request.GET['min_price']
+        max_price=request.GET['max_price']
+        if max_price:
+            cars=cars.filter(price__gte=min_price,price__lte=max_price)
+
+
+
     data = {
         'cars':cars,
     }
