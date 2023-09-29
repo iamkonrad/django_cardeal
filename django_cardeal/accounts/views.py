@@ -1,4 +1,5 @@
 from django.shortcuts import render, redirect
+from django.contrib import messages
 
 
 def login(request):
@@ -8,7 +9,7 @@ def logout(request):
     return redirect('home')
 
 def register(request):
-    return render(request,'accounts/register.html')
+        return render(request,'accounts/register.html')
 
 def dashboard(request):
     return render(request,'accounts/dashboard.html')

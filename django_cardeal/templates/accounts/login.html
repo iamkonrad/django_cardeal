@@ -29,7 +29,7 @@
                         </a>
                     </div>
                     <h3>Sign into your account</h3>
-                    {% include 'includes/messages.html' %}
+
                     <form action="{% url 'login' %}" method="POST">
                       {% csrf_token %}
                         <div class="form-group form-box">
@@ -48,8 +48,8 @@
                         </div>
                         <div class="clearfix"></div>
                         <ul class="social-list">
-                            <li><a href="{% provider_login_url 'facebook' method='js_sdk' %}" class="facebook-bg"><i class="fa fa-facebook facebook-i"></i><span>Facebook</span></a></li>
-                            <li><a href="{% provider_login_url 'google' %}" class="google-bg"><i class="fa fa-google google-i"></i><span>Google</span></a></li>
+                            <li><a href="" class="facebook-bg"><i class="fa fa-facebook facebook-i"></i><span>Facebook</span></a></li>
+                            <li><a href="" class="google-bg"><i class="fa fa-google google-i"></i><span>Google</span></a></li>
                         </ul>
                     </form>
                     <p>Don't have an account? <a href="{% url 'register' %}" class="thembo"> Register here</a></p>
