@@ -1,3 +1,4 @@
+from django.contrib.auth.decorators import login_required
 from django.shortcuts import render, redirect
 from django.contrib import messages,auth
 from django.contrib.auth.models import User
@@ -19,8 +20,13 @@ def login(request):
             return redirect('login')
     return render(request,'accounts/login.html')
 
+
+@login_required(login_url = 'login')
 def logout(request):
-    return redirect('home')
+    if request.method =='POST':
+        auth.logout(request)
+    messages.success(request,"You are now logged out.")
+    return redirect('login')
 
 def register(request):
     if request.method == 'POST':
