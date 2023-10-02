@@ -1,5 +1,5 @@
 from django.shortcuts import render
 
 
-def inquiry(request):
+def enquiry(request):
     return

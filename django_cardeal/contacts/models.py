@@ -10,7 +10,7 @@ class Contact(models.Model):
     car_id = models.IntegerField()
     customer_interest = models.CharField(max_length=100)
     car_name = models.CharField(max_length=100)
-    country= CountryField(blank_label='(select a country)')
+    country = CountryField(blank_label='(select a country)')
     province = models.CharField(max_length=200, blank=True, null=True)
     city = models.CharField(max_length=200)
     email = models.EmailField(max_length=100)

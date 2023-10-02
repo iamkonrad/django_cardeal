@@ -3,6 +3,7 @@
 {% block title %} |{{single_car.car_name}}{% endblock %}}
 {% block content %}
 
+{% load static %}
 {% load humanize %}
 
 <!-- Sub banner start -->
@@ -213,13 +214,23 @@
                         <div class="modal-content">
                           <div class="contact-dealer modal-header">
                             <!-- <h5 class="modal-title" id="inquiryModalLabel">Contact Dealer</h5> -->
-                            <img src="img/logos/logo-black-white.png">
+                              <img src="{% static 'img/logos/logo-black-white.png' %}" alt="Logo">
                             <button type="button" class="close" data-dismiss="modal">
                               <span>&times;</span>
                             </button>
                           </div>
                           <div class="modal-body">
-                            <form action="#">
+                            <form action="{% url 'enquiry' %}" method="POST">
+                                {% csrf_token %}
+
+                                {% if user.is_authenticated %}
+                                    <input type="hidden" name="user_id" value="{{user.id}}">
+                                {% else %}
+                                    <input type="hidden" name="user_id" value="0">
+
+
+                                {% endif %}
+                                    <input type="hidden" name="user_id" value="{{single_car.id}}">
                                 <div class="form-group">
                                   <label for="name" class="col-form-label">Hello, My Name is</label>
                                   <div class="row">
@@ -241,17 +252,20 @@
                                     </div>
 
                                 <div class="form-group">
-                                  <input type="text" name="car_title" class="form-control" value="LAMBORGHINI HURACÁN." readonly>
+                                  <input type="text" name="car_name" class="form-control" value="{{ single_car.car_name }}" readonly>
                                 </div>
 
                                 <div class="form-group">
                                   <label for="name" class="col-form-label">I live in</label>
                                   <div class="row">
+                                           <div class="col">
+                                      <input type="text" name="country" class="form-control" placeholder="City" required>
+                                    </div>
                                     <div class="col">
                                       <input type="text" name="city" class="form-control" placeholder="City" required>
                                     </div>
                                     <div class="col">
-                                      <input type="text" name="state" class="form-control" placeholder="State" required>
+                                      <input type="text" name="province" class="form-control" placeholder="Province" >
                                     </div>
                                   </div>
                                 </div>
