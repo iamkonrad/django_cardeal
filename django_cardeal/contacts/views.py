@@ -20,6 +20,12 @@ def enquiry(request):
         message = request.POST['message']
 
 
+        if request.user.is_authenticated:
+            user_id=request.user.id
+            has_contacted = Contact.objects.filter(car_id=car_id,user_id=user_id)
+            if has_contacted:
+                messages.error(request,'You have already made an enquiry.')
+                return redirect('/cars/'+car_id)
 
 
         contact = Contact(car_id=car_id, car_name=car_name, user_id=user_id,
@@ -29,4 +35,4 @@ def enquiry(request):
 
         contact.save()
         messages.success(request, 'Your request has been submitted, we will contact you shortly.')
-        return redirect ('/cars/+car_id')
+        return redirect ('/cars/'+car_id)
