@@ -2,6 +2,8 @@ from django.contrib.auth.decorators import login_required
 from django.shortcuts import render, redirect
 from django.contrib import messages,auth
 from django.contrib.auth.models import User
+from django.urls import reverse
+from accounts.models import EmailNewsletter
 
 
 def login(request):
@@ -60,3 +62,22 @@ def register(request):
 
 def dashboard(request):
     return render(request,'accounts/dashboard.html')
+
+
+
+def subscribe(request):
+    if request.method =="POST" and request.POST.get('EmailNewsletter'):
+        email=request.POST.get('EmailNewsletter')
+        exists=EmailNewsletter.objects.filter(email=email).exists()
+
+        if not exists:
+            EmailNewsletter.objects.create(email=email)
+            messages.success(request, 'Your email has been added to our database.')
+        else:
+            messages.info(request,'This email has already been added.')
+
+        referrer = request.META.get('HTTP_REFERER', reverse('home'))
+        return redirect(f'{referrer}#newsletter-section')
+
+
+    return redirect(reverse('home'))

@@ -70,8 +70,6 @@ SESSION_TIMEOUT_REDIRECT = 'accounts/login'
 
 
 
-
-
 ROOT_URLCONF = 'django_cardeal.urls'
 
 TEMPLATES = [

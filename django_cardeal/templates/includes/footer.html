@@ -1,6 +1,41 @@
 <!-- Footer start -->
 <footer class="footer">
+                             <section id="newsletter-section" class="footer-main border-top padding-y">
 
+        <div class="container">
+            <div class="row justify-content-center">
+
+                <div class="col-md-5 mt-1">
+
+                    {% if messages %}
+                        {% for message in messages %}
+                            <div id="message" class="container">
+                                <div {% if message.tags %} class="alert alert-{{ message.tags }}"{% endif %} role="alert">
+                                    <button type="button" class="close" data-dismiss="alert"><span aria-hidden="true">&times;</span></button>
+                                    {% if message.level == DEFAULT_MESSAGE_LEVELS.ERROR %}Error: {% endif %}
+                                    {{ message }}
+                                </div>
+                            </div>
+                        {% endfor %}
+                    {% endif %}
+
+                    <form method="post" action="{% url 'subscribe' %}">
+                        {% csrf_token %}
+                        <div class="mb-2">
+                            Subscribe to our newsletter:
+                        </div>
+                        <div class="input-group">
+                            <input type="text" placeholder="Email" class="form-control" name="EmailNewsletter">
+                            <span class="input-group-append">
+                                <button type="submit" class="btn btn-primary">Subscribe</button>
+                            </span>
+                        </div> <!-- input-group.// -->
+                    </form>
+                </div>
+
+            </div> <!-- row.// -->
+        </div><!-- //container -->
+    </section><!-- footer-top.// -->
     <div class="sub-footer">
         <div class="container">
             <div class="row">
@@ -9,6 +44,7 @@
                 </div>
                 <div class="col-lg-4">
                     <div class="social-list-2">
+
                         <ul>
                             <li><a href="https://facebook.com/" target="_blank" class="facebook-bg"><i class="fa fa-facebook"></i></a></li>
                             <li><a href="https://twitter.com/" target="_blank" class="twitter-bg"><i class="fa fa-twitter"></i></a></li>
