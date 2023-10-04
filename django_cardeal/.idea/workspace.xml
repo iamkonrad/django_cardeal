@@ -4,10 +4,7 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="f211f3e8-8b7e-4959-9c2f-8b341596ab03" name="Changes" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/dataSources/5455f2cc-0ae2-4f76-8fa9-77f06a5de979.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/dataSources/5455f2cc-0ae2-4f76-8fa9-77f06a5de979.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-    </list>
+    <list default="true" id="f211f3e8-8b7e-4959-9c2f-8b341596ab03" name="Changes" comment="" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -50,6 +47,11 @@
     "vue.rearranger.settings.migration": "true"
   }
 }]]></component>
+  <component name="RecentsManager">
+    <key name="CopyFile.RECENT_KEYS">
+      <recent name="C:\Users\PlanetMercury\Documents\GitHub\django_cardeal\django_cardeal" />
+    </key>
+  </component>
   <component name="RunManager">
     <configuration name="django_cardeal" type="Python.DjangoServer" factoryName="Django server">
       <module name="django_cardeal" />
@@ -93,7 +95,7 @@
       <workItem from="1696306559051" duration="391000" />
       <workItem from="1696307019077" duration="614000" />
       <workItem from="1696319557258" duration="1378000" />
-      <workItem from="1696414201103" duration="173000" />
+      <workItem from="1696414201103" duration="738000" />
     </task>
     <servers />
   </component>
