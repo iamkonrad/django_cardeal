@@ -5,6 +5,7 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="f211f3e8-8b7e-4959-9c2f-8b341596ab03" name="Changes" comment="">
+      <change beforePath="$PROJECT_DIR$/.idea/dataSources/5455f2cc-0ae2-4f76-8fa9-77f06a5de979.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/dataSources/5455f2cc-0ae2-4f76-8fa9-77f06a5de979.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -40,6 +41,7 @@
     "RunOnceActivity.ShowReadmeOnStart": "true",
     "WebServerToolWindowFactoryState": "false",
     "git-widget-placeholder": "main",
+    "last_opened_file_path": "C:/Users/PlanetMercury/Documents/GitHub/django_cardeal/django_cardeal",
     "node.js.detected.package.eslint": "true",
     "node.js.detected.package.tslint": "true",
     "node.js.selected.package.eslint": "(autodetect)",
@@ -57,8 +59,9 @@
         <env name="PYTHONUNBUFFERED" value="1" />
         <env name="DJANGO_SETTINGS_MODULE" value="django_cardeal.settings" />
       </envs>
-      <option name="SDK_HOME" value="" />
-      <option name="WORKING_DIRECTORY" value="" />
+      <option name="SDK_HOME" value="C:\Users\PlanetMercury\Documents\GitHub\django_cardeal\django_cardeal\venv\Scripts\python.exe" />
+      <option name="SDK_NAME" value="Python 3.11 (django_cardeal)" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$" />
       <option name="IS_MODULE_SDK" value="false" />
       <option name="ADD_CONTENT_ROOTS" value="true" />
       <option name="ADD_SOURCE_ROOTS" value="true" />
@@ -90,6 +93,7 @@
       <workItem from="1696306559051" duration="391000" />
       <workItem from="1696307019077" duration="614000" />
       <workItem from="1696319557258" duration="1378000" />
+      <workItem from="1696414201103" duration="173000" />
     </task>
     <servers />
   </component>
