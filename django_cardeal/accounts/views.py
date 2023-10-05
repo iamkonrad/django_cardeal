@@ -60,6 +60,7 @@ def register(request):
     else:
         return render(request,'accounts/register.html')
 
+@login_required(login_url = 'login')
 def dashboard(request):
     return render(request,'accounts/dashboard.html')
 

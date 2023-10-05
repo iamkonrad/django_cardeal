@@ -162,8 +162,8 @@ MESSAGE_TAGS = {
 EMAIL_BACKEND='django.core.mail.backends.console.EmailBackend'
 
 
-                    #For securty reasons below fields should be filled as and if needed
 
+#For securty reasons below fields should be filled as and if needed
 
 #EMAIL_BACKEND='django.core.mail.backends.smtp.EmailBackend'
 #EMAIL_HOST='smtp.gmail.com'
