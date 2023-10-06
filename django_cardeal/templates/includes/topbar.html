@@ -10,7 +10,11 @@
                             <a href="{% url 'dashboard' %}" class="sign-in"><i class="fa fa-tachometer"></i> Dashboard</a>
                         </li>
                         <li>
-                            <a href="{% url 'logout' %}" class="sign-in"><i class="fa fa-sign-out"></i> Logout</a>
+                            <a href="javascript:{document.getElementById('logout').submit()}" class="sign-in"><i class="fa fa-sign-out"></i> Logout</a>
+                              <form action="{% url 'logout' %}" id="logout" method="POST">
+                        {% csrf_token %}
+                        <input type="hidden">
+                      </form>
                         </li>
                     {% else %}
                         <li>
