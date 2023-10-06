@@ -30,10 +30,12 @@ def car_detail(request,id):
     }
     return render(request, 'cars/car_detail.html', data)
 
+
 def search (request):
     cars = Car.objects.order_by('-created_date')
 
     model_search=Car.objects.values_list('model',flat=True).distinct()
+    country_search=Car.objects.values_list('country',flat=True).distinct()
     city_search=Car.objects.values_list('city',flat=True).distinct()
     year_search=Car.objects.values_list('production_year',flat=True).distinct()
     body_style_search=Car.objects.values_list('body_style',flat=True).distinct()
@@ -48,22 +50,32 @@ def search (request):
     if 'model' in request.GET:
         model = request.GET['model']
         if model:
-            cars = cars.filter(model__iexact=model)
+            cars = cars.filter(model__icontains=model)
+
+    if 'country' in request.GET:
+        country=request.GET['country']
+        if country:
+            cars=cars.filter(country__icontains=country)
 
     if 'city' in request.GET:
         city = request.GET['city']
         if city:
-            cars = cars.filter(model__iexact=city)
+            cars = cars.filter(city__icontains=city)
 
     if 'production_year' in request.GET:
         production_year = request.GET['production_year']
         if production_year:
-            cars = cars.filter(model__iexact=production_year)
+            cars = cars.filter(production_year__exact=production_year)
 
     if 'body_style' in request.GET:
         body_style = request.GET['body_style']
         if body_style:
-            cars = cars.filter(model__iexact=body_style)
+            cars = cars.filter(body_style__icontains=body_style)
+
+    #if 'transmission' in request.GET:
+    #    transmission=request.GET['transmission']
+    #    if transmission:
+    #        cars=cars.filter(transmission__icontains=transmission)
 
     if 'min_price' in request.GET:
         min_price=request.GET['min_price']
@@ -72,10 +84,10 @@ def search (request):
             cars=cars.filter(price__gte=min_price,price__lte=max_price)
 
 
-
     data = {
         'cars':cars,
         'model_search': model_search,
+        'country_search': country_search,
         'city_search': city_search,
         'year_search': year_search,
         'body_style_search': body_style_search,

@@ -1,6 +1,6 @@
 {% extends 'base.html' %}
 
-{% block title %} |Search Results {% endblock %}}
+{% block title %} |Search Results {% endblock %}
 {% block content %}
 {% load humanize %}
 
@@ -40,7 +40,7 @@
                         <div class="col-lg-3 col-md-6 col-sm-6 col-6">
                             <div class="form-group">
                                 <select class="selectpicker search-fields" name="city">
-                                    <option>Select Year</option>
+                                    <option>Select City</option>
                                             {% for city in city_search %}
                                         <option value="{{city}}">{{city}}</option>
                                     {% endfor %}
@@ -62,6 +62,7 @@
                         <div class="col-lg-3 col-md-6 col-sm-6 col-6">
                             <div class="form-group">
                                 <select class="selectpicker search-fields" name="body_style">
+                                 <option value="">Clear Selection</option>
                                     <option>Select Type of Car</option>
                                             {% for body_style in body_style_search %}
                                         <option value="{{body_style}}">{{body_style}}</option>
@@ -69,9 +70,21 @@
                                 </select>
                             </div>
                         </div>
+                    <div class="form-group">
+    <select class="selectpicker search-fields" name="body_style">
+        <option value="">Clear Selection</option>  <!-- Add this "Clear" option -->
+        <option>Select Type of Car</option>
+        {% for body_style in body_style_search %}
+            <option value="{{ body_style }}">{{ body_style }}</option>
+        {% endfor %}
+    </select>
+</div>
+
+With this modification, users can choose "Clear Selection" from the dropdown to reset their selection for the "body_style" filter. The empty value of the option will indicate that no selection is made, and you can handle this value in your view logic to clear or ignore the "body_style" filter when it is selected.
+
                         <div class="col-lg-3 col-md-6 col-sm-6 col-6">
                             <div class="form-group">
-                             <select class="selectpicker search-fields" name="body_style">
+                             <select class="selectpicker search-fields" name="transmission">
                                     <option>Transmission</option>
                                             {% for transmission in transmission_search %}
                                         <option value="{{transmission}}">{{transmssion}}</option>
