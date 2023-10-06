@@ -4,6 +4,7 @@ from django.contrib import messages,auth
 from django.contrib.auth.models import User
 from django.urls import reverse
 from accounts.models import EmailNewsletter
+from contacts.models import Contact
 
 
 def login(request):
@@ -23,7 +24,6 @@ def login(request):
     return render(request,'accounts/login.html')
 
 
-@login_required(login_url = 'login')
 def logout(request):
     if request.method =='POST':
         auth.logout(request)
@@ -62,8 +62,12 @@ def register(request):
 
 @login_required(login_url = 'login')
 def dashboard(request):
-    return render(request,'accounts/dashboard.html')
+    user_enquiry=Contact.objects.order_by('-create_date').filter(user_id=request.user.id)
+    data = {
+        'enquiries':user_enquiry,
+    }
 
+    return render(request,'accounts/dashboard.html',data)
 
 
 def subscribe(request):
