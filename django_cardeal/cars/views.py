@@ -33,7 +33,7 @@ def car_detail(request,id):
 
 def search (request):
     cars = Car.objects.order_by('-created_date')
-
+    keyword=Car.objects.values_list('model',flat=True).distinct()
     model_search=Car.objects.values_list('model',flat=True).distinct()
     country_search=Car.objects.values_list('country',flat=True).distinct()
     city_search=Car.objects.values_list('city',flat=True).distinct()
@@ -50,17 +50,17 @@ def search (request):
     if 'model' in request.GET:
         model = request.GET['model']
         if model:
-            cars = cars.filter(model__icontains=model)
+            cars = cars.filter(model__iexact=model)
 
     if 'country' in request.GET:
         country=request.GET['country']
         if country:
-            cars=cars.filter(country__icontains=country)
+            cars=cars.filter(country__iexact=country)
 
     if 'city' in request.GET:
         city = request.GET['city']
         if city:
-            cars = cars.filter(city__icontains=city)
+            cars = cars.filter(city__iexact=city)
 
     if 'production_year' in request.GET:
         production_year = request.GET['production_year']
@@ -70,12 +70,12 @@ def search (request):
     if 'body_style' in request.GET:
         body_style = request.GET['body_style']
         if body_style:
-            cars = cars.filter(body_style__icontains=body_style)
+            cars = cars.filter(body_style__iexact=body_style)
 
-    #if 'transmission' in request.GET:
-    #    transmission=request.GET['transmission']
-    #    if transmission:
-    #        cars=cars.filter(transmission__icontains=transmission)
+    if 'transmission' in request.GET:
+        transmission=request.GET['transmission']
+        if transmission:
+            cars=cars.filter(transmission__iexact=transmission)
 
     if 'min_price' in request.GET:
         min_price=request.GET['min_price']
@@ -86,6 +86,7 @@ def search (request):
 
     data = {
         'cars':cars,
+        'keyword':keyword,
         'model_search': model_search,
         'country_search': country_search,
         'city_search': city_search,
