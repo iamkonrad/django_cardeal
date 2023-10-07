@@ -20,17 +20,21 @@
 
 
 <!-- Search box 3 start -->
-<div class="search-box-3 sb-7 bg-active">
+          <div class="search-box-3 sb-7 bg-active">
     <div class="container">
         <div class="search-area-inner">
             <div class="search-contents">
                 <form method="GET" action="{% url 'search' %}">
                     <div class="row">
-
+                        <div class="col-lg-3 col-md-6 col-sm-6 col-6">
+                            <div class="form-group">
+                                <input type="text" name="keyword" placeholder="Search by name" class="form-control">
+                            </div>
+                        </div>
                         <div class="col-lg-3 col-md-6 col-sm-6 col-6">
                             <div class="form-group">
                                 <select class="selectpicker search-fields" name="model">
-                                    <option>Select Model</option>
+                                    <option selected="true" disabled="disabled">Select Model</option>
                                     <option value="">Clear Selection</option>
                                     {% for model in model_search %}
                                         <option value="{{model}}">{{model}}</option>
@@ -41,9 +45,9 @@
                         <div class="col-lg-3 col-md-6 col-sm-6 col-6">
                             <div class="form-group">
                                 <select class="selectpicker search-fields" name="city">
-                                    <option>Select City</option>
+                                    <option selected="true" disabled="disabled">Select Location</option>
                                     <option value="">Clear Selection</option>
-                                            {% for city in city_search %}
+                                    {% for city in city_search %}
                                         <option value="{{city}}">{{city}}</option>
                                     {% endfor %}
                                 </select>
@@ -52,9 +56,9 @@
                         <div class="col-lg-3 col-md-6 col-sm-6 col-6">
                             <div class="form-group">
                                 <select class="selectpicker search-fields" name="year">
-                                    <option>Select Year</option>
+                                    <option selected="true" disabled="disabled">Select Year</option>
                                     <option value="">Clear Selection</option>
-                                            {% for year in year_search %}
+                                    {% for year in year_search %}
                                         <option value="{{year}}">{{year}}</option>
                                     {% endfor %}
                                 </select>
@@ -65,24 +69,21 @@
                         <div class="col-lg-3 col-md-6 col-sm-6 col-6">
                             <div class="form-group">
                                 <select class="selectpicker search-fields" name="body_style">
-                                             <option>Select Type of Car</option>
-                                 <option value="">Clear Selection</option>
-                                            {% for body_style in body_style_search %}
+                                    <option selected="true" disabled="disabled">Select Type Of Car</option>
+                                    <option value="">Clear Selection</option>
+                                    {% for body_style in body_style_search %}
                                         <option value="{{body_style}}">{{body_style}}</option>
                                     {% endfor %}
                                 </select>
                             </div>
                         </div>
-
-
-
                         <div class="col-lg-3 col-md-6 col-sm-6 col-6">
                             <div class="form-group">
-                             <select class="selectpicker search-fields" name="transmission">
-                                    <option>Transmission</option>
-                                 <option value="">Clear Selection</option>
-                                            {% for transmission in transmission_search %}
-                                        <option value="{{transmission}}">{{transmssion}}</option>
+                                <select class="selectpicker search-fields" name="transmission">
+                                    <option selected="true" disabled="disabled">Transmission</option>
+                                    <option value="">Clear Selection</option>
+                                    {% for transmission in transmission_search %}
+                                        <option value="{{transmission}}">{{transmission}}</option>
                                     {% endfor %}
                                 </select>
                             </div>
@@ -108,6 +109,7 @@
         </div>
     </div>
 </div>
+
 <!-- Search box 3 end -->
 
 <!-- Featured car start -->
