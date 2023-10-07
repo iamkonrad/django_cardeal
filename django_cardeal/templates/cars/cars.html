@@ -144,6 +144,7 @@
                 <div class="form-group">
                     <select class="form-control search-fields" name="model">
                         <option selected="true" disabled="disabled">Model</option>
+                        <option value="">Clear Selection</option>
                         {% for model in model_search %}
                             <option value="{{model}}">{{model}}</option>
                         {% endfor %}
@@ -152,6 +153,7 @@
                 <div class="form-group">
                     <select class="form-control search-fields" name="city">
                         <option selected="true" disabled="disabled">Location</option>
+                        <option value="">Clear Selection</option>
                         {% for city in city_search %}
                             <option value="{{city}}">{{city.city}}</option>
                         {% endfor %}
@@ -160,6 +162,7 @@
                 <div class="form-group">
                     <select class="form-control search-fields" name="production_year">
                         <option selected="true" disabled="disabled">Year</option>
+                        <option value="">Clear Selection</option>
                      {% for production_year in year_search %}
                             <option value="{{production_year}}">{{production_year}}</option>
                         {% endfor %}
@@ -168,6 +171,7 @@
                 <div class="form-group">
                     <select class="form-control search-fields" name="body_style">
                         <option selected="true" disabled="disabled">Select Type Of Car</option>
+                        <option value="">Clear Selection</option>
                         {% for body_style in body_style_search %}
                             <option value="{{body_style}}">{{body_style}}</option>
                         {% endfor %}

@@ -47,6 +47,7 @@
                 <div class="form-group">
                     <select class="form-control search-fields" name="model">
                         <option selected="true" disabled="disabled">Model</option>
+                        <option value="">Clear Selection</option>
                         {% for model in model_search %}
                             <option value="{{model}}">{{model}}</option>
                         {% endfor %}
@@ -55,6 +56,7 @@
                      <div class="form-group">
                     <select class="form-control search-fields" name="country">
                         <option selected="true" disabled="disabled">Country</option>
+                        <option value="">Clear Selection</option>
                         {% for country in country_search %}
                             <option value="{{country}}">{{country}}</option>
                         {% endfor %}
@@ -63,6 +65,7 @@
                 <div class="form-group">
                     <select class="form-control search-fields" name="city">
                         <option selected="true" disabled="disabled">City</option>
+                        <option value="">Clear Selection</option>
                         {% for city in city_search %}
                             <option value="{{city}}">{{city}}</option>
                         {% endfor %}
@@ -71,6 +74,7 @@
                 <div class="form-group">
                     <select class="form-control search-fields" name="production_year">
                         <option selected="true" disabled="disabled">Year</option>
+                        <option value="">Clear Selection</option>
                      {% for production_year in year_search %}
                             <option value="{{production_year}}">{{production_year}}</option>
                         {% endfor %}
@@ -79,6 +83,7 @@
                 <div class="form-group">
                     <select class="form-control search-fields" name="body_style">
                         <option selected="true" disabled="disabled">Select Type Of Car</option>
+                        <option value="">Clear Selection</option>
                         {% for body_style in body_style_search %}
                             <option value="{{body_style}}">{{body_style}}</option>
                         {% endfor %}
@@ -87,6 +92,7 @@
        <div class="form-group">
     <select class="form-control search-fields" name="transmission">
         <option selected="true" disabled="disabled">Transmission</option>
+        <option value="">Clear Selection</option>
         {% for transmission in transmission_search %}
             <option value="{{ transmission }}">{{ transmission }}</option>
         {% endfor %}
