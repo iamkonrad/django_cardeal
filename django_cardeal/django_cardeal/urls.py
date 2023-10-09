@@ -19,6 +19,7 @@ from django.urls import path,include
 from django.conf.urls.static import static
 from django.conf import settings
 
+
 urlpatterns = [
     path('admin/', include('admin_honeypot.urls', namespace='admin_honeypot')),
     path('n2admin/', admin.site.urls),
@@ -28,4 +29,4 @@ urlpatterns = [
     path('contacts/',include('contacts.urls')),
 
 
-] + static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)
+              ] + static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)

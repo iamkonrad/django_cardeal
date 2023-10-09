@@ -19,32 +19,43 @@
             <div class="carousel-item banner-max-height active item-bg">
                 <img class="d-block w-100 h-100" src="{% static 'img/car-1.jpg' %}" alt="banner">
                 <div class="carousel-content container banner-info-2 bi-2 text-left">
-                    <h3 style="margin-bottom: 50px;">Welcome to CarDeal</h3>
-                    <h5>Help us  finding your dream car ot tomorrow<br>
-                                                TODAY</h5>
-                      <span style="color: black; font-weight: normal;">As of</span>
-    <span id="current-time" style="font-style: normal; color: #007BFF; font-weight: bold;"></span>
+                    <h2 style="margin-bottom: 50px;">Welcome to CarDeal</h2>
+                    <h5 style="font-size: 30px;">Find cars of tomorrow: <span style="color: white; font-weight: normal;">TODAY</span></h5>
+                    <br>
+
+                <span style="color: white; font-weight: normal; font-size: 25px;">As of</span>
+                <span id="current-time" style="color: white; font-weight: normal; font-size: 20px;"></span>
+                <span style="color: white; font-weight: normal; font-size: 20px;">we have:</span>
+
+
+                    <br>                                     <br>
+
+
                         <h5>Total number of cars: {{ car_count }}</h5>
     <h5>Total number of users: {{ user_count }}</h5>
-                    <a href="{% url 'services' %}" class="btn btn-lg btn-theme">Read more</a>
+                    <br>
+                    <a href="{% url 'cars' %}" class="btn btn-lg btn-theme">Find cars</a>
                 </div>
             </div>
             <div class="carousel-item banner-max-height item-bg">
                 <img class="d-block w-100 h-100" src="{% static 'img/car-2.jpg' %}" alt="banner">
                 <div class="carousel-content container banner-info-2 bi-2 text-left">
-                    <h3 style="margin-bottom: 50px;">Explore Your Dream Car</h3>
-                    <h5>Allow us to guide you through the innovative stress<br>
-                        free approach in finding your dream car.</h5>
-                    <a href="{% url 'services' %}" class="btn btn-lg btn-theme">Read more</a>
+
+                    <h2 style="margin-bottom: 250px;">Explore Your Dream Car</h2>
+                    <h5 style="font-size: 30px; margin-bottom: 100px;">Allow us to assist you.</h5>
+
+                         <span style="color: white; font-weight: normal;"></span></h5>
+
+                    <a href="{% url 'services' %}" class="btn btn-lg btn-theme">Additional services</a>
                 </div>
             </div>
             <div class="carousel-item banner-max-height item-bg">
                 <img class="d-block w-100 h-100" src="{% static 'img/car-3.jpg' %}" alt="banner">
                 <div class="carousel-content container banner-info-2 bi-2 text-left">
-                    <h3 style="margin-bottom: 50px;">We are here for you 24/7</h3>
-                    <h5>Allow us to guide you through the innovative stress<br>
-                        free approach in finding your dream car.</h5>
-                    <a href="{% url 'services' %}" class="btn btn-lg btn-theme">Read more</a>
+                    <h2 style="margin-bottom: 250px;">We are here for you 24/7</h2>
+                    <h5 style="font-size: 30px; margin-top: 50px;">Allow us to assist you.</h5>
+
+                    <a href="{% url 'services' %}" class="btn btn-lg btn-theme">Contact us</a>
                 </div>
             </div>
         </div>

@@ -6,7 +6,7 @@
                 <ul class="top-social-media pull-right">
                     {% if user.is_authenticated %}
                                   <li>
-                            <span class="sign-in"><i class="fa fa-user"></i> Your are logged in as:{{user.username}}</span>
+                            <span class="sign-in"><i class="fa fa-user"></i> You are logged in as:{{user.username}}</span>
                         </li>
                         <li>
                             <a href="{% url 'dashboard' %}" class="sign-in"><i class="fa fa-tachometer"></i> Dashboard</a>
