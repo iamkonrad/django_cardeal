@@ -1,3 +1,4 @@
+from django.contrib.auth.models import User
 from django.shortcuts import render
 
 from cars.models import Car
@@ -14,6 +15,10 @@ def home(request):
     year_search=Car.objects.values_list('production_year',flat=True).distinct()
     body_style_search=Car.objects.values_list('body_style',flat=True).distinct()
     transmission_search=Car.objects.values_list('transmission',flat=True).distinct()
+    doors_search=Car.objects.values_list('doors',flat=True).distinct()
+
+    car_count = Car.objects.count()
+    user_count = User.objects.count()
 
 
     data = {
@@ -26,6 +31,9 @@ def home(request):
         'year_search':year_search,
         'body_style_search':body_style_search,
         'transmission_search':transmission_search,
+        'doors_search':doors_search,
+        'car_count': car_count,
+        'user_count': user_count,
     }
     return render (request,'pages/home.html',data)
 

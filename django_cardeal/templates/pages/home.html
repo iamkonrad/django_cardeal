@@ -3,25 +3,36 @@
 {% block title %} |Homepage {% endblock %}
 {% block content %}
 
+
 {% load humanize %}
 {% load static %}
+
+
+{% block scripts %}
+    <script src="{% static 'current_date.js' %}" defer></script>
+{% endblock scripts %}
 <!-- Banner start -->
+
 <div class="banner" id="banner">
     <div id="carouselExampleIndicators" class="carousel slide" data-ride="carousel">
         <div class="carousel-inner banner-slider-inner text-center">
             <div class="carousel-item banner-max-height active item-bg">
                 <img class="d-block w-100 h-100" src="{% static 'img/car-1.jpg' %}" alt="banner">
                 <div class="carousel-content container banner-info-2 bi-2 text-left">
-                    <h3>Wow Factor Standard</h3>
-                    <h5>Allow us to guide you through the innovative stress<br>
-                        free approach in finding your dream car.</h5>
+                    <h3 style="margin-bottom: 50px;">Welcome to CarDeal</h3>
+                    <h5>Help us  finding your dream car ot tomorrow<br>
+                                                TODAY</h5>
+                      <span style="color: black; font-weight: normal;">As of</span>
+    <span id="current-time" style="font-style: normal; color: #007BFF; font-weight: bold;"></span>
+                        <h5>Total number of cars: {{ car_count }}</h5>
+    <h5>Total number of users: {{ user_count }}</h5>
                     <a href="{% url 'services' %}" class="btn btn-lg btn-theme">Read more</a>
                 </div>
             </div>
             <div class="carousel-item banner-max-height item-bg">
                 <img class="d-block w-100 h-100" src="{% static 'img/car-2.jpg' %}" alt="banner">
                 <div class="carousel-content container banner-info-2 bi-2 text-left">
-                    <h3>Explore Your Dream Car</h3>
+                    <h3 style="margin-bottom: 50px;">Explore Your Dream Car</h3>
                     <h5>Allow us to guide you through the innovative stress<br>
                         free approach in finding your dream car.</h5>
                     <a href="{% url 'services' %}" class="btn btn-lg btn-theme">Read more</a>
@@ -30,7 +41,7 @@
             <div class="carousel-item banner-max-height item-bg">
                 <img class="d-block w-100 h-100" src="{% static 'img/car-3.jpg' %}" alt="banner">
                 <div class="carousel-content container banner-info-2 bi-2 text-left">
-                    <h3>We Are Wheel</h3>
+                    <h3 style="margin-bottom: 50px;">We are here for you 24/7</h3>
                     <h5>Allow us to guide you through the innovative stress<br>
                         free approach in finding your dream car.</h5>
                     <a href="{% url 'services' %}" class="btn btn-lg btn-theme">Read more</a>
@@ -54,7 +65,7 @@
                 </div>
                      <div class="form-group">
                     <select class="form-control search-fields" name="country">
-                        <option selected="true" disabled="disabled">Country</option>
+                        <option selected="true" disabled="disabled">Country of listing</option>
                         <option value="">Clear Selection</option>
                         {% for country in country_search %}
                             <option value="{{country}}">{{country}}</option>
@@ -63,7 +74,7 @@
                 </div>
                 <div class="form-group">
                     <select class="form-control search-fields" name="city">
-                        <option selected="true" disabled="disabled">City</option>
+                        <option selected="true" disabled="disabled">City of listing</option>
                         <option value="">Clear Selection</option>
                         {% for city in city_search %}
                             <option value="{{city}}">{{city}}</option>
@@ -85,6 +96,15 @@
                         <option value="">Clear Selection</option>
                         {% for body_style in body_style_search %}
                             <option value="{{body_style}}">{{body_style}}</option>
+                        {% endfor %}
+                    </select>
+                </div>
+                         <div class="form-group">
+                    <select class="form-control search-fields" name="doors">
+                        <option selected="true" disabled="disabled">Number of doors</option>
+                        <option value="">Clear Selection</option>
+                        {% for doors in doors_search %}
+                            <option value="{{doors}}">{{doors}}</option>
                         {% endfor %}
                     </select>
                 </div>
