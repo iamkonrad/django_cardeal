@@ -1,8 +1,10 @@
 from django.contrib.auth.models import User
-from django.shortcuts import render
+from django.shortcuts import render, redirect
 
 from cars.models import Car
-from .models import Teams
+from .models import Teams,ContactMsg
+from django.core.mail import send_mail
+from django.contrib import messages
 
 
 def home(request):
@@ -48,4 +50,41 @@ def services(request):
     return render(request,'pages/services.html')
 
 def contact(request):
-    return render(request,'pages/contact.html')
+    name = ''
+    email = ''
+    subject = ''
+    phone = ''
+    message = ''
+
+    if request.method == 'POST':
+        name = request.POST['name']
+        email = request.POST['email']
+        subject = request.POST['subject']
+        phone = request.POST['phone']
+        message = request.POST['message']
+
+        contact_message = ContactMsg(
+            name=name,
+            email=email,
+            subject=subject,
+            phone=phone,
+            message=message
+        )
+        contact_message.save()
+
+#        email_subject = 'CarDeal message: ' + subject
+#        msg_content = f'Name: {name}. Email: {email}. Phone_No: {phone}. Message: {message}'
+
+#        admin_info = User.objects.get(is_superuser=True)
+#        admin_email = admin_info.email
+#        send_mail(
+#            email_subject,
+#            msg_content,
+#            'yofdvcvcSail@someemailaddress93j4.com',
+#            [admin_email],
+#            fail_silently=False,
+#        )
+
+        messages.success(request, 'Thank you for reaching out to us. We will get back to you shortly.')
+
+    return render(request, 'pages/contact.html')

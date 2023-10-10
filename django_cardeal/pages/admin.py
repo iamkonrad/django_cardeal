@@ -1,5 +1,5 @@
 from django.contrib import admin
-from .models import Teams
+from .models import Teams, ContactMsg
 from django.utils.html import format_html
 
 class TeamsAdmin(admin.ModelAdmin):
@@ -15,4 +15,9 @@ class TeamsAdmin(admin.ModelAdmin):
 admin.site.register(Teams,TeamsAdmin)
 
 
+class ContactMsgAdmin(admin.ModelAdmin):
+    list_display = ('name', 'email', 'subject','timestamp')
+    list_display_links = ('name', 'email', 'subject','timestamp')
+    search_fields = ('name', 'email', 'subject','timestamp')
 
+admin.site.register(ContactMsg, ContactMsgAdmin)
