@@ -1,4 +1,5 @@
 # django_cardeal (written in Django, using HTML and CSS)
+Visually attractive online listing platform. Most suitable for a single seller featuring his/her products.
 
 
 
