@@ -15,12 +15,10 @@ Visually attractive online listing platform. Most suitable for a single seller f
 
 ## Some of the key functionalities:
 - User profile (registration/login/logout etc.)
-- Multiple apps and views/dashboard etc.
+- Multiple apps and functionalities such as dashboard etc.
+- Styled admin panel (mainly with CSS)
+- Numerous safety features, such as admin honeypot, securely stored secret key and session timeout
+- Django messages (upon login, logout etc.)
+- JS-related functions such as fetching the actual date from the db, different page highlight
 - Fully-functional newsletter
 - Pagination
-- Styled admin panel (mainly with CSS)
-- Safety features (admin honeypot)
-- Securely stored secret key
-- Session timeout
-- Django messages (upon login, logout etc.)
-- Few basic JS-related functions such as fetching the actual date from the db, different elements highlight
